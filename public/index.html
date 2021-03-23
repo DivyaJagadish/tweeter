@@ -9,15 +9,16 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-     <!--Nav Css-->
-     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-      <!--HeaderCss-->
+    <!--Nav Css-->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!--HeaderCss-->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <!--new-tweet-->
+     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!--External Font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
-
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,7 +34,9 @@
       <div>
       Write a New Tweet 
      <p id="arrow">&#65086 </p> </div> 	
+       
     </nav>
+    <!--Header-->
     <header>
       <div id ="newtweet">
           <img src="/images/profile-hex.png"> 
@@ -44,6 +47,17 @@
       </div>
   </header>
     <!-- Page-specific (main) content here -->
-    <main class="container">hello world; how are you hello world helloworld helloworld vdfbncmvndf ghjklkmnjh bgvfcdsdf rtgyuhuijkkm jhbgvfdsswedrftgyhujikm tyguhjkhbgvfdresrdrtyhuijjnbhgvfcdrtfgyh </main>
+    <main class="container"><section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action = "/tweets"method= "POST"> 
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div id ="buttonandcounter">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>.</main>
   </body>
+  
 </html>
