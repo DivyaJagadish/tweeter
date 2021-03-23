@@ -29,7 +29,11 @@ button {
   font-family: Bungee;
   color :white;
 }
-output{
+.counter{
   font-weight: 700;
   float:right;
+  color :black;
+}
+.counter1{
+  color: red;
 }
