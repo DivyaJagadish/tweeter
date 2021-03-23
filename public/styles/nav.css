@@ -1,0 +1,26 @@
+/* Navigation pane style */
+nav {
+  display:flex;
+  justify-content: space-between;
+  padding: 1.5em ; 
+  height: 120px;
+  color :  #FFFFFF ;
+ background-color: #4056A1;
+ Width :100% ;
+}
+/* Setting heading font to Bungee */
+span {
+  font-family: Bungee;
+}
+/* setting up of Write New tweet and arrow  */
+#newtweetdropdown{
+display:flex;
+flex-direction: column;
+font-weight:700;
+}
+#arrow{
+  display: flex;
+  background-color: transparent;
+  color:red;
+  justify-content: center;
+}
