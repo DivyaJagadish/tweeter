@@ -65,6 +65,21 @@ return $tweet;
 };
 
 $(document).ready(function () {
+// renders old tweets
   renderTweets(data);
-   // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
+  $("#tweetform").on("submit",function(event){
+    event.preventDefault() ;
+    //  data from the form is serialised;
+    const $data = $(this).serialize();
+    $.ajax({
+      url : "/tweets",
+      method : "POST",
+      data: $data
+    }).then(function(result){
+      console.log("Sucess",result);
+    });
+
+  })
+
 });
