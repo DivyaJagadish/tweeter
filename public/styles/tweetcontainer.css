@@ -5,6 +5,7 @@
   padding: 1em;
   opacity: 0.1;
   box-shadow: none;
+  font-weight: normal;
 }
 .tweet header{
   display :flex;
