@@ -1,4 +1,4 @@
-
+/* Tweet container CSS style */
 .tweet{
   margin-top: 1.5em;
   border: 2px solid black;
@@ -7,10 +7,12 @@
   box-shadow: none;
   font-weight: normal;
 }
+/* on hover style */
 .tweet:hover{
   opacity: 1 ;
   box-shadow: 5px 6px blue;
 }
+/* h4 style as it only appears on mouse enter */
 .tweet h4{
   opacity:0;
 }
