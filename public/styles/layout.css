@@ -19,7 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro","sans-serif" ; 
-  margin-top: 120px;
+  
 }
 
 /*
@@ -31,4 +31,43 @@ body {
   width:90%;
   margin:0 5%;
   padding :1.5em;
+}
+/* desktop  media  Query*/
+@media only screen and (min-width: 1024px) {
+  nav{
+    background-color: #4056A1;
+    height: 120px;
+  }
+  body{
+    margin-top: 120px;
+  }
+  #displaydesktop {
+    display:flex;
+    flex-direction: row;
+
+  }
+  .main-header {
+    margin:5%;
+    width :40%;
+
+  }
+  .container {
+    display:flex;
+    flex-direction:column;
+    float:right;
+    width:60%;
+    margin:0 5%;
+    padding :1.5em;
+  }
+}
+/* media Query for tablet and phones */
+@media only screen and (max-width: 1024px) {
+nav{
+   height:50px;
+    background-color: #c4a300;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  }
+  body{
+    margin-top: 55px;
+  } 
 }

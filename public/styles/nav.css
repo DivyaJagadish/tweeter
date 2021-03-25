@@ -3,13 +3,12 @@ nav {
   display:flex;
   justify-content: space-between;
   padding: 1.5em ; 
-  height: 120px;
+  font-weight: bold;
   color :  #FFFFFF ;
-  background-color: #4056A1;
-  Width :100% ;
   position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+  
 }
 /* Setting heading font to Bungee */
 span {
