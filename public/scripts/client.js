@@ -51,11 +51,19 @@ $(document).ready(function () {
   $("#tweetform").on("submit",function(event){
     event.preventDefault() ;
     //  data from the form is serialised;
+   
     const $data = $(this).serialize();
-    $.ajax({
-      url : "/tweets",
-      method : "POST",
-      data: $data
-    });
+    const data =decodeURIComponent($data).substr(5);//converts to data with no URL component and substr as it contains text=
+    if(data.length !== 0 && $data.length <=140) {
+      $.ajax({
+        url : "/tweets",
+        method : "POST",
+        data: $data
+      })
+   } else if(data.length >140) {
+     alert("Error ! Tweet exceeds 140 Characters!");
+   } else {
+     alert("Error ! Tweet is empty");
+   }
   })
 });
