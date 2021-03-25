@@ -11,12 +11,13 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 const renderTweets = function (tweets) {
+  $("#tweets-container").empty();
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
 // create new tweets;
@@ -31,7 +32,7 @@ const createTweetElement = function (tweetData) {
   </header>
   <div class="boxed"> ${escape(tweetData.content.text)}</div>
   <footer>
-    <p>10 days ago</p>
+    <p>${new Date(tweetData.created_at)}</p>
     <p>
     <i class='fas fa-flag'></i>
     <i class="fas fa-retweet"></i>
@@ -66,6 +67,7 @@ $(document).ready(function () {
         method : "POST",
         data: $data
       }).then(function(result){  
+        loadtweets();
       });
       $( '#tweetform' ).each(function(){
         this.reset();
