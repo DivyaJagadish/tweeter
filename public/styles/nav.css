@@ -21,9 +21,9 @@ display:flex;
 flex-direction: column;
 font-weight:700;
 }
-#arrow{
+ .fas.fa-angle-double-down{
   display: flex;
-  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
   color:red;
-  justify-content: center;
 }

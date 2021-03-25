@@ -31,7 +31,7 @@ const createTweetElement = function (tweetData) {
   </header>
   <div class="boxed"> ${escape(tweetData.content.text)}</div>
   <footer>
-    <p>${escape(tweetData.created_at)}</p>
+    <p>10 days ago</p>
     <p>
     <i class='fas fa-flag'></i>
     <i class="fas fa-retweet"></i>
@@ -42,18 +42,18 @@ const createTweetElement = function (tweetData) {
 return $tweet;
 };
 
-$(document).ready(function () {
-// renders old tweets
-  const loadtweets =function(){
-    $.ajax({
-      url : "/tweets",
-      method : "GET",
-    }).then(function(result){
-      renderTweets(result);
-    });
-  };
-  loadtweets();
 // renderTweets(data);
+const loadtweets =function(){
+  $.ajax({
+    url : "/tweets",
+    method : "GET",
+  }).then(function(result){
+    renderTweets(result);
+  });
+};
+loadtweets();
+$(document).ready(function () {
+
   $("#tweetform").on("submit",function(event){
     event.preventDefault() ;
     //  data from the form is serialised;
