@@ -65,9 +65,12 @@ $(document).ready(function () {
         url : "/tweets",
         method : "POST",
         data: $data
-      }).then(function(result){
-        loadtweets();
+      }).then(function(result){  
       });
+      $( '#tweetform' ).each(function(){
+        this.reset();
+        $(this).find(".counter").html(140)
+    });
    } else if(data.length >140) {
     $("#error").show();
      $("#error").css({"opacity":"1"}).html(`<p id="errormsg">Error:Too long...Length exceeds 140 characters!!!!</p>`)
