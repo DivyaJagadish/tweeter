@@ -22,6 +22,10 @@ const renderTweets = function (tweets) {
 };
 // create new tweets;
 const createTweetElement = function (tweetData) {
+  // calculating no:of days before the tweet was created;
+  let time = new Date().getTime()// today's time 
+  let daysago = Math.floor((time - tweetData.created_at)/(1000*60*60*24));//calculating difference in days to be displayed
+
   const $tweet = $(`<article class="tweet">
    <header>
       <div id ="nameandphoto">
@@ -32,7 +36,7 @@ const createTweetElement = function (tweetData) {
   </header>
   <div class="boxed"> ${escape(tweetData.content.text)}</div>
   <footer>
-    <p>${new Date(tweetData.created_at)}</p>
+    <p>${daysago} days ago</p>
     <p>
     <i class='fas fa-flag'></i>
     <i class="fas fa-retweet"></i>
