@@ -16,7 +16,7 @@ const renderTweets = function (tweets) {
   // takes return value and appends it to the tweets container
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').prepend($tweet);
+    $('#tweets-container').append($tweet);
   }
 };
 // create new tweets;
@@ -57,6 +57,7 @@ $(document).ready(function () {
   $("#tweetform").on("submit",function(event){
     event.preventDefault() ;
     //  data from the form is serialised;
+    $("#error").hide();
     const $data = $(this).serialize();
     const data =decodeURIComponent($data).substr(5);//converts to data with no URL component and substr as it contains text=
     if(data.length !== 0 && $data.length <=140) {
@@ -65,12 +66,14 @@ $(document).ready(function () {
         method : "POST",
         data: $data
       }).then(function(result){
-        loadtweets(result);
+        loadtweets();
       });
    } else if(data.length >140) {
-     alert("Error ! Tweet exceeds 140 Characters!");
+    $("#error").show();
+     $("#error").css({"opacity":"1"}).html(`<p id="errormsg">Error:Too long...Length exceeds 140 characters!!!!</p>`)
    } else {
-     alert("Error ! Tweet is empty");
+    $("#error").show();
+    $("#error").css({"opacity":"1"}).html(`<p id="errormsg">No message.Type your tweet bedore submission!!!!</p>`)
    }
   })
 });
