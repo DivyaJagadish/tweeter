@@ -36,6 +36,7 @@ justify-content: space-around;
   display: flex;
   border-bottom: 3px solid black;
   justify-content: space-between;
+  word-break: break-word;
 }
 article.tweet footer{
   display:flex;

@@ -68,11 +68,13 @@ $(document).ready(function () {
   //submit Event Handler
   $("#tweetform").on("submit", function (event) {
     event.preventDefault();
+
+
     // data from the form is serialised;
     $("#error").hide();//Hiding error msg 
     const $data = $(this).serialize();
     const data = decodeURIComponent($data).substr(5);//converts to data with no URL component and substr as it contains text=
-    if (data.length !== 0 && $data.length <= 140) {
+    if (data.length !== 0 &&  data.length <= 140) {
       $.ajax({
         url: "/tweets",
         method: "POST",
